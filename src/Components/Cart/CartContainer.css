@@ -1,0 +1,15 @@
+.cart-container-div {
+  height: 100%;
+  width: 450px;
+  background-color: lightblue;
+  position: fixed;
+  right: 0;
+}
+
+.your-cart {
+  text-align: center;
+}
+
+.cart-items {
+  width: max-content;
+}

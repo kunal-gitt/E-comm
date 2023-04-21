@@ -1,0 +1,22 @@
+.meal {
+  display: grid;
+  justify-content: center;
+  margin: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+}
+
+.meal h3 {
+  margin: 0 0 0.25rem 0;
+}
+
+.imageUrl {
+  font-style: italic;
+}
+
+.price {
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: #ad5502;
+  font-size: 1.25rem;
+}
