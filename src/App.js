@@ -15,7 +15,7 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import About from "./About";
-import AvailableProducts from "./Components/Products/AvailableProducts";
+import Products from "./Components/Products/Products";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -30,13 +30,14 @@ function App() {
 
   return (
     <div>
-      <CartProvider>
+      <BrowserRouter>
         {cartIsShown && <Cart onClose={hideCartHandler} />}
-        <Header onShowCart={showCartHandler}></Header>
-        <main>
-          <Meals />
-        </main>
-      </CartProvider>
+        <Header onShowCart={showCartHandler} />
+        <Routes>
+          <Route path="/" element={<Products />} />
+          <Route path="/About" element={<About />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
