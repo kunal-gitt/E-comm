@@ -1,0 +1,66 @@
+.div {
+  margin-top: 75px;
+  background-color: grey;
+  text-align: center;
+  padding: 50px;
+  font-size: 30px;
+  color: #ffffff;
+}
+
+.btn {
+  font: inherit;
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #ffffff;
+  border: 2px solid #1370e9;
+  text-align: center;
+  border-radius: 6px;
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: 1rem;
+  margin: 0.25rem;
+  padding: 20px;
+}
+
+.tours {
+  text-align: center;
+  font-size: 35px;
+}
+
+.li {
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+.show {
+  font-weight: bold;
+}
+
+.btn-1 {
+  font: inherit;
+  cursor: pointer;
+  background-color: rgb(65, 169, 253);
+  border: 1px solid rgb(65, 169, 253);
+  color: white;
+  padding: 0.25rem 2rem;
+  border-radius: 30px;
+  font-weight: bold;
+}
+
+.btn-1:hover,
+.btn-1:active {
+  background-color: rgb(24, 85, 134);
+  border-color: rgb(65, 169, 253);
+}
+
+.hr {
+  width: 1200px;
+}
+
+.h2 {
+  background-color: rgb(65, 169, 253);
+  color: #ffffff;
+  text-align: center;
+  padding: 70px;
+}

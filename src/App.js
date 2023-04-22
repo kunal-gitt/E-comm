@@ -4,18 +4,10 @@ import "./App.css";
 import Meals from "./Components/Products/Products";
 import Cart from "./Components/Cart/Cart";
 import { useState } from "react";
-import CartProvider from "./Components/Store/CartProvider";
-import {
-  BrowserRouter,
-  NavLink,
-  Route,
-  Router,
-  RouterProvider,
-  Routes,
-  createBrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./About";
 import Products from "./Components/Products/Products";
+import Home from "./Components/Home";
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -35,6 +27,7 @@ function App() {
         <Header onShowCart={showCartHandler} />
         <Routes>
           <Route path="/" element={<Products />} />
+          <Route path="/Home" element={<Home />} />
           <Route path="/About" element={<About />} />
         </Routes>
       </BrowserRouter>

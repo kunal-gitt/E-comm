@@ -10,6 +10,7 @@ const Header = (props) => {
     <Fragment>
       <header className={classes.header}>
         <h1>E-commerce</h1>
+        <NavLink to="/Home">Home</NavLink>
         <NavLink to="/About">About</NavLink>
 
         <HeaderCartButton onClick={props.onShowCart} />
