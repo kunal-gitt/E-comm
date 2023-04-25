@@ -2,7 +2,7 @@ import Card from "../UI/Card";
 import ProductItem from "./ProductItem/ProductItem";
 import classes from "./AvailableProducts.module.css";
 
-const DUMMY_MEALS = [
+const DUMMY_Data = [
   {
     album: "ALBUM 1",
     title: "Colors",
@@ -49,7 +49,7 @@ const DUMMY_MEALS = [
 ];
 
 const AvailableProducts = () => {
-  const productlist = DUMMY_MEALS.map((product) => (
+  const productlist = DUMMY_Data.map((product) => (
     <ProductItem
       id={product.id}
       key={product.id}
