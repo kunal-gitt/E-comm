@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./Contact.css";
+import classes from "./Contact.module.css";
 
 const Contact = (props) => {
   const NameRef = useRef("");
@@ -19,7 +19,7 @@ const Contact = (props) => {
   };
 
   return (
-    <form onSubmit={submitHandler} className="form">
+    <form onSubmit={submitHandler} className={classes.control}>
       <div>
         <label htmlFor="name">Name</label>
         <input type="text" id="name" ref={NameRef} />
@@ -32,7 +32,7 @@ const Contact = (props) => {
         <label htmlFor="phoneno">Phone no. </label>
         <input type="number" id="phoneno" ref={PhoneRef} />
       </div>
-      <button>Submit</button>
+      <button className={classes.button}>Submit</button>
     </form>
   );
 };
