@@ -1,23 +1,33 @@
-import { Fragment } from "react";
+// import { Fragment, useContext } from "react";
 
-import classes from "../Layout/Header.module.css";
-import HeaderCartButton from "./HeaderCartButton";
-import { NavLink, Route, Router } from "react-router-dom";
-import About from "../../About";
+// import classes from "../Layout/Header.module.css";
+// import HeaderCartButton from "./HeaderCartButton";
+// import { NavLink, Route, Router } from "react-router-dom";
+// import About from "../../About";
+// import AuthContext from "../Store/auth-context";
 
-const Header = (props) => {
-  return (
-    <Fragment>
-      <header className={classes.header}>
-        <h1>E-commerce</h1>
-        <NavLink to="/home">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/contact">Contact Us</NavLink>
+// const Header = (props) => {
+//   const authCtx = useContext(AuthContext);
 
-        <HeaderCartButton onClick={props.onShowCart} />
-      </header>
-    </Fragment>
-  );
-};
+//   const isLoggedIn = authCtx.isLoggedIn;
 
-export default Header;
+//   console.log(isLoggedIn);
+//   return (
+//     <Fragment>
+//       <header className={classes.header}>
+//         <NavLink to="/">
+//           <h1>E-commerce</h1>
+//         </NavLink>
+//         {isLoggedIn && <NavLink to="/products">Products</NavLink>}
+
+//         <NavLink to="/about">About</NavLink>
+//         <NavLink to="login">Login</NavLink>
+//         <NavLink to="/contact">Contact Us</NavLink>
+
+//         <HeaderCartButton onClick={props.onShowCart} />
+//       </header>
+//     </Fragment>
+//   );
+// };
+
+// export default Header;
