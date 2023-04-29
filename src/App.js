@@ -1,62 +1,68 @@
-// import Header from "./Components/Layout/Header";
+import Header from "./Components/Layout/Header";
 
-// import "./App.css";
+import "./App.css";
 
-// import Cart from "./Components/Cart/Cart";
-// import { useContext, useState } from "react";
-// import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Cart from "./Components/Cart/Cart";
+import { useContext, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-// import Products from "./Components/Products/Products";
-// import Home from "./Components/Home";
-// import Contact from "./Components/Contact";
-// import About from "./About";
-// import Product from "./Components/Product";
-// import Login from "./Login";
-// import AuthContext from "./Components/Store/auth-context";
+import Products from "./Components/Products/Products";
+import Home from "./Components/Pages/Home";
+import Contact from "./Components/Pages/Contact";
+import About from "./Components/Pages/About";
+import Product from "./Components/Product";
+import Login from "./Login";
+import ProductDetailsList from "./ProductDetailslist";
+import AuthContext from "./Components/Store/auth-context";
 
-// function App() {
-//   const [cartIsShown, setCartIsShown] = useState(false);
+function App() {
+  const [cartIsShown, setCartIsShown] = useState(false);
 
-//   const showCartHandler = () => {
-//     setCartIsShown(true);
-//   };
+  const showCartHandler = () => {
+    setCartIsShown(true);
+  };
 
-//   const hideCartHandler = () => {
-//     setCartIsShown(false);
-//   };
+  const hideCartHandler = () => {
+    setCartIsShown(false);
+  };
 
-//   const addDetailsHandler = async (details) => {
-//     const response = await fetch(
-//       "https://react-http-bbcb8-default-rtdb.firebaseio.com/details.json",
-//       {
-//         method: "POST",
-//         body: JSON.stringify(details),
-//         headers: {
-//           "Content-type": "application/json",
-//         },
-//       }
-//     );
-//   };
+  const addDetailsHandler = async (details) => {
+    const response = await fetch(
+      "https://react-http-bbcb8-default-rtdb.firebaseio.com/details.json",
+      {
+        method: "POST",
+        body: JSON.stringify(details),
+        headers: {
+          "Content-type": "application/json",
+        },
+      }
+    );
+  };
 
-//   return (
-//     <div>
-//       {cartIsShown && <Cart onClose={hideCartHandler} />}
-//       <Header onShowCart={showCartHandler} />
+  const authctx = useContext(AuthContext);
 
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/products" element={<Products />} />
+  return (
+    <>
+      {cartIsShown && <Cart onClose={hideCartHandler} />}
+      <Header onShowCart={showCartHandler} />
 
-//         <Route path="/about" element={<About />} />
-//         <Route
-//           path="/contact"
-//           element={<Contact onAddDetails={addDetailsHandler} />}
-//         />
-//         <Route path="/product" element={<Product />} />
-//         <Route path="/login" element={<Login />} />
-//       </Routes>
-//     </div>
-//   );
-// }
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {authctx.isLoggedIn && (
+          <Route path="/products" element={<Products />} />
+        )}
 
-// export default App;
+        <Route path="/Productdetails" element={<ProductDetailsList />} />
+        <Route path="/about" element={<About />} />
+        <Route
+          path="/contact"
+          element={<Contact onAddDetails={addDetailsHandler} />}
+        />
+        <Route path="/product" element={<Product />} />
+        <Route path="/login" element={<Login />}></Route>
+      </Routes>
+    </>
+  );
+}
+
+export default App;
